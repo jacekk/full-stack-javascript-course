@@ -6,7 +6,9 @@ import { auth } from './auth'
 import { todos } from './todos'
 
 const localstoreKey = 'chat-app-v1'
-const localstoreBlacklist = ['auth.token']
+
+// nesting blacklist is also possible --> https://github.com/rt2zz/redux-persist#nested-persists
+const localstoreBlacklist = ['auth']
 
 const model = {
 	auth,
@@ -17,8 +19,8 @@ const config = {
 	reducerEnhancer: (reducer) =>
 		persistReducer(
 			{
-				blacklist: localstoreKey,
-				key: localstoreBlacklist,
+				blacklist: localstoreBlacklist,
+				key: localstoreKey,
 				storage,
 			},
 			reducer
