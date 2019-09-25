@@ -3,17 +3,19 @@ import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
 import { auth } from './auth'
+import { chat } from './chat'
 import { todos } from './todos'
+
+const model = {
+	auth,
+	chat,
+	todos,
+}
 
 const localstoreKey = 'chat-app-v1'
 
 // nesting blacklist is also possible --> https://github.com/rt2zz/redux-persist#nested-persists
 const localstoreBlacklist = ['auth']
-
-const model = {
-	auth,
-	todos,
-}
 
 const config = {
 	reducerEnhancer: (reducer) =>
