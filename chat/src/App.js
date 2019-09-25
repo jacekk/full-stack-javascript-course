@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router, Redirect } from '@reach/router'
+import { StoreProvider } from 'easy-peasy'
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { store } from './store'
+import { Auth } from './components/pages/Auth'
+import { Messenger } from './components/pages/Messenger'
 
-export default App;
+import './App.css'
+
+export const App = () => (
+	<StoreProvider store={store}>
+		<div className="App">
+			<Router>
+				<Auth path="/" />
+				<Messenger path="/messenger" />
+				<Redirect from="*" to="/" />
+			</Router>
+		</div>
+	</StoreProvider>
+)
