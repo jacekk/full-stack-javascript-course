@@ -23,7 +23,7 @@ const AddTodo = ({ onAdd }) => {
 
 export const Messenger = () => {
 	const add = useStoreActions((actions) => actions.todos.add)
-	const socket = useStoreState((state) => state.chat.socketRef)
+	const sendMsg = useStoreActions((actions) => actions.chat.send)
 	const startChat = useStoreActions((actions) => actions.chat.setupSocket)
 	const stopChat = useStoreActions((actions) => actions.chat.disconnectSocket)
 	const todos = useStoreState((state) => state.todos.items)
@@ -35,14 +35,17 @@ export const Messenger = () => {
 		}
 	}, [startChat, stopChat])
 
+	const onAdd = (content) => {
+		add(content)
+		sendMsg(content)
+	}
+
 	return (
 		<div>
-			<pre>{JSON.stringify(socket)}</pre>
-			<br />
 			{todos.map((todo, idx) => (
 				<div key={idx}>{todo}</div>
 			))}
-			<AddTodo onAdd={add} />
+			<AddTodo onAdd={onAdd} />
 		</div>
 	)
 }

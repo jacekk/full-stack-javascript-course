@@ -7,6 +7,9 @@ export const chat = {
 	message: '',
 	socketRef: null,
 	threads: [],
+	send: action((state, payload) => {
+		state.socketRef.send(payload)
+	}),
 	setSocketRef: action((state, payload) => {
 		state.socketRef = payload
 	}),

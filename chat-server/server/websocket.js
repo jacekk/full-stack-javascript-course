@@ -12,7 +12,7 @@ var start = () => {
 	wsServer.on('connection', (ws) => {
 		console.log('on WebSocket connection')
 		ws.on('message', (msg) => {
-			console.log('on WebSocket message | msg', msg)
+			console.log('on WebSocket message |', msg)
 		})
 	})
 }

@@ -3,9 +3,10 @@ import { Router, Redirect } from '@reach/router'
 import { StoreProvider } from 'easy-peasy'
 import React from 'react'
 
-import { store, persistor } from './store'
-import { Auth } from './components/pages/Auth'
+import { Home } from './components/pages/Home'
 import { Messenger } from './components/pages/Messenger'
+import { Signup } from './components/pages/Signup'
+import { store, persistor } from './store'
 
 import './App.css'
 
@@ -14,7 +15,8 @@ export const App = () => (
 		<PersistGate loading={<div>Loading...</div>} persistor={persistor}>
 			<div className="App">
 				<Router>
-					<Auth path="/" />
+					<Home path="/" />
+					<Signup path="/signup" />
 					<Messenger path="/messenger" />
 					<Redirect from="*" to="/" />
 				</Router>
