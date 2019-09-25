@@ -33,7 +33,7 @@ export const Messenger = () => {
 		return () => {
 			stopChat()
 		}
-	})
+	}, [startChat, stopChat])
 
 	return (
 		<div>
