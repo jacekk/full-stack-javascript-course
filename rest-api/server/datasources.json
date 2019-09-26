@@ -1,16 +1,16 @@
 {
   "db": {
-    "connector": "memory",
-    "name": "db"
+    "name": "db",
+    "connector": "memory"
   },
   "app-db": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "rest-api",
+    "password": "",
+    "name": "app-db",
     "authSource": "admin",
     "connector": "mongodb",
-    "database": "rest-api",
-    "host": "localhost",
-    "name": "app-db",
-    "password": "",
-    "port": 27017,
     "user": ""
   },
   "app-mail": {
