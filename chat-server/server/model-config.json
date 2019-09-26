@@ -1,20 +1,16 @@
 {
   "_meta": {
-    "sources": [
-      "loopback/common/models",
-      "loopback/server/models",
-      "../common/models",
-      "./models"
-    ],
-    "mixins": [
-      "loopback/common/mixins",
-      "loopback/server/mixins",
-      "../common/mixins",
-      "./mixins"
-    ]
+    "sources": ["loopback/common/models", "loopback/server/models", "../common/models", "./models"],
+    "mixins": ["loopback/common/mixins", "loopback/server/mixins", "../common/mixins", "./mixins"]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "db",
+    "relations": {
+      "profile": {
+        "type": "hasOne",
+        "model": "Profile"
+      }
+    }
   },
   "AccessToken": {
     "dataSource": "db",
@@ -40,6 +36,10 @@
     "public": true
   },
   "Message": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Profile": {
     "dataSource": "db",
     "public": true
   }

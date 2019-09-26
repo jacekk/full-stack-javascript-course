@@ -8,6 +8,10 @@ export const chat = {
 	socketRef: null,
 	threads: [],
 	send: action((state, payload) => {
+		if (!state.socketRef) {
+			return alert('Websocket not connected')
+		}
+
 		const msg = typeof payload === 'string' ? payload : JSON.stringify(payload)
 
 		state.socketRef.send(msg)

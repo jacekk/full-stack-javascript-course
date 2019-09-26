@@ -1,19 +1,28 @@
 var WebSocket = require('ws')
 
-var wsServer
+var { signUp } = require('./signup')
+
+var routeMessage = (ws, data) => {
+	if (!data || !data.type) {
+		return
+	}
+
+	switch (data.type) {
+		case 'SIGNUP':
+			return signUp(ws, data)
+	}
+}
 
 var start = () => {
 	console.log('Starting web socket')
-	wsServer = new WebSocket.Server({ port: 8081 })
+	var wsServer = new WebSocket.Server({ port: 8081 })
 
 	wsServer.on('open', (ev) => {
 		console.log('on WebSocket open')
 	})
 	wsServer.on('connection', (ws) => {
-		console.log('on WebSocket connection')
-		ws.on('message', (msg) => {
+		var onMessage = (msg) => {
 			let parsed = msg
-
 			try {
 				parsed = JSON.parse(msg)
 			} catch (ignore) {}
@@ -21,7 +30,12 @@ var start = () => {
 			console.log('on WebSocket message')
 			console.log('- plain:', msg)
 			console.log('- parsed:', parsed)
-		})
+
+			routeMessage(ws, parsed)
+		}
+
+		console.log('on WebSocket connection')
+		ws.on('message', onMessage)
 	})
 }
 

@@ -3,9 +3,10 @@ import { useStoreActions } from 'easy-peasy'
 import React, { useState, useEffect } from 'react'
 
 export const Signup = () => {
-	const [email, setEmail] = useState('')
-	const [password, setPassword] = useState('')
-	const [username, setUsername] = useState('')
+	// @todo remove those defaults
+	const [email, setEmail] = useState('bb@op.pl')
+	const [password, setPassword] = useState('cc')
+	const [username, setUsername] = useState('aa')
 	const sendMsg = useStoreActions((actions) => actions.chat.send)
 	const startChat = useStoreActions((actions) => actions.chat.setupSocket)
 	const stopChat = useStoreActions((actions) => actions.chat.disconnectSocket)
