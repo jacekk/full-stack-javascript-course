@@ -1,4 +1,3 @@
-import { Link } from '@reach/router'
 import { useStoreActions, useStoreState } from 'easy-peasy'
 import React from 'react'
 
@@ -19,10 +18,6 @@ export const Home = () => {
 					Reset
 				</button>
 			</div>
-			<br />
-			<Link to="/signup">Sign up</Link>
-			<br />
-			<Link to="/messenger">Messenger</Link>
 		</div>
 	)
 }

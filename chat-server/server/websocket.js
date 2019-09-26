@@ -12,7 +12,15 @@ var start = () => {
 	wsServer.on('connection', (ws) => {
 		console.log('on WebSocket connection')
 		ws.on('message', (msg) => {
-			console.log('on WebSocket message |', msg)
+			let parsed = msg
+
+			try {
+				parsed = JSON.parse(msg)
+			} catch (ignore) {}
+
+			console.log('on WebSocket message')
+			console.log('- plain:', msg)
+			console.log('- parsed:', parsed)
 		})
 	})
 }

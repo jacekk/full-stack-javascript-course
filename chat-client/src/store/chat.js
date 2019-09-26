@@ -8,7 +8,9 @@ export const chat = {
 	socketRef: null,
 	threads: [],
 	send: action((state, payload) => {
-		state.socketRef.send(payload)
+		const msg = typeof payload === 'string' ? payload : JSON.stringify(payload)
+
+		state.socketRef.send(msg)
 	}),
 	setSocketRef: action((state, payload) => {
 		state.socketRef = payload

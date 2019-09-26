@@ -5,6 +5,7 @@ import React from 'react'
 
 import { Home } from './components/pages/Home'
 import { Messenger } from './components/pages/Messenger'
+import { Navbar } from './components/Navbar'
 import { Signup } from './components/pages/Signup'
 import { store, persistor } from './store'
 
@@ -14,7 +15,8 @@ export const App = () => (
 	<StoreProvider store={store}>
 		<PersistGate loading={<div>Loading...</div>} persistor={persistor}>
 			<div className="App">
-				<Router>
+				<Navbar />
+				<Router className="App-router">
 					<Home path="/" />
 					<Signup path="/signup" />
 					<Messenger path="/messenger" />

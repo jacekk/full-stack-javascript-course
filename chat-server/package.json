@@ -6,16 +6,18 @@
     "node": ">=6"
   },
   "scripts": {
-    "start": "node .",
+    "start": "cross-env DEBUG=express:* nodemon index.js",
     "posttest": "npm run lint && npm audit"
   },
   "dependencies": {
     "compression": "^1.0.3",
     "cors": "^2.5.2",
+    "cross-env": "^6.0.0",
     "helmet": "^3.10.0",
     "loopback": "^3.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.2.0",
+    "nodemon": "^1.19.2",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^3.0.0",
     "ws": "^7.1.2"
