@@ -1,7 +1,7 @@
 {
-  "name": "chat",
+  "name": "chat-client",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
   "dependencies": {
     "@reach/router": "^1.2.1",
     "bootstrap": "^4.3.1",
