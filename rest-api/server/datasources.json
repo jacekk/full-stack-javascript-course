@@ -1,6 +1,31 @@
 {
   "db": {
-    "name": "db",
-    "connector": "memory"
+    "connector": "memory",
+    "name": "db"
+  },
+  "app-db": {
+    "authSource": "admin",
+    "connector": "mongodb",
+    "database": "rest-api",
+    "host": "localhost",
+    "name": "app-db",
+    "password": "",
+    "port": 27017,
+    "user": ""
+  },
+  "app-mail": {
+    "name": "app-mail",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "localhost",
+        "secure": false,
+        "port": 1025,
+        "tls": {
+          "rejectUnauthorized": false
+        }
+      }
+    ]
   }
 }

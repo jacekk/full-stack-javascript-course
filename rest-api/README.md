@@ -12,3 +12,10 @@ And after a productive day:
 
 -   `yarn docker:stop` or
 -   `yarn docker:down` to destroy containers
+
+### Services
+
+Running `docker-compose` the following services are up & running:
+
+-   MongoDB
+-   [MailHog](https://github.com/mailhog/MailHog) -- GUI under http://localhost:8025/ .

@@ -374,6 +374,11 @@ braces@^2.3.1, braces@^2.3.2:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
+bson@^1.0.6, bson@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-1.1.1.tgz#4330f5e99104c4e751e7351859e2d408279f2f13"
+  integrity sha512-jCGVYLoYMHDkOsbwJZBCqwMHyH4c+wzgI9hG7Z6SZJRXWr+x58pdIbm2i9a/jFGCkRJqRUr8eoI7lDWa0hTkxg==
+
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
@@ -1846,6 +1851,18 @@ loopback-component-explorer@^6.2.0:
     strong-globalize "^4.1.1"
     swagger-ui "^2.2.5"
 
+loopback-connector-mongodb@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/loopback-connector-mongodb/-/loopback-connector-mongodb-5.0.1.tgz#ffab38f47dac2cfb42da72ac2d7fbfeda2420e99"
+  integrity sha512-bFEbgyod3MG9fa9vJDL4Hvh+8KQj9wvw24jEIVaWqHHOEpKmoFUTeH3O16XxzmrGMSOkHxmsGkg3bpKhX7Ggww==
+  dependencies:
+    async "^2.6.1"
+    bson "^1.0.6"
+    debug "^3.1.0"
+    loopback-connector "^4.5.0"
+    mongodb "^3.2.4"
+    strong-globalize "^4.1.1"
+
 loopback-connector-remote@^3.0.0:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/loopback-connector-remote/-/loopback-connector-remote-3.4.1.tgz#893c872cd753d89eb50a866c01f347e51c29e7ec"
@@ -1854,7 +1871,7 @@ loopback-connector-remote@^3.0.0:
     loopback-datasource-juggler "^3.0.0"
     strong-remoting "^3.0.0"
 
-loopback-connector@^4.4.0:
+loopback-connector@^4.4.0, loopback-connector@^4.5.0:
   version "4.9.0"
   resolved "https://registry.yarnpkg.com/loopback-connector/-/loopback-connector-4.9.0.tgz#82dcb2d11ecb6c902de30e9b60b83666e76986df"
   integrity sha512-WtHPxItqNLOxuonsOthuOIZrkd9kW+t0HtMweU0pjtEquCvKJAV8s9xqaNs8q8kmbv6rgmYEtmzxkRUsRcV+xQ==
@@ -2133,6 +2150,15 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+
+mongodb@^3.2.4:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.3.2.tgz#ff086b5f552cf07e24ce098694210f3d42d668b2"
+  integrity sha512-fqJt3iywelk4yKu/lfwQg163Bjpo5zDKhXiohycvon4iQHbrfflSAz9AIlRE6496Pm/dQKQK5bMigdVo2s6gBg==
+  dependencies:
+    bson "^1.1.1"
+    require_optional "^1.0.1"
+    safe-buffer "^5.1.2"
 
 ms@2.0.0:
   version "2.0.0"
@@ -2789,6 +2815,19 @@ request@^2.83.0:
     tough-cookie "~2.4.3"
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
+
+require_optional@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/require_optional/-/require_optional-1.0.1.tgz#4cf35a4247f64ca3df8c2ef208cc494b1ca8fc2e"
+  integrity sha512-qhM/y57enGWHAe3v/NcwML6a3/vfESLe/sGM2dII+gEO0BpKRUkWZow/tyloNqJyN6kXSl3RyyM8Ll5D/sJP8g==
+  dependencies:
+    resolve-from "^2.0.0"
+    semver "^5.1.0"
+
+resolve-from@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-2.0.0.tgz#9480ab20e94ffa1d9e80a804c7ea147611966b57"
+  integrity sha1-lICrIOlP+h2egKgEx+oUdhGWa1c=
 
 resolve-url@^0.2.1:
   version "0.2.1"
