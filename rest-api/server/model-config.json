@@ -27,5 +27,9 @@
   "Role": {
     "dataSource": "app-db",
     "public": false
+  },
+  "Post": {
+    "dataSource": "app-db",
+    "public": true
   }
 }
