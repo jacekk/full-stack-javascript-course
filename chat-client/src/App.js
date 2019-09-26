@@ -8,7 +8,7 @@ import { Messenger } from './components/pages/Messenger'
 import { Signup } from './components/pages/Signup'
 import { store, persistor } from './store'
 
-import './App.css'
+import './App.sass'
 
 export const App = () => (
 	<StoreProvider store={store}>
