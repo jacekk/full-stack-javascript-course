@@ -7,7 +7,8 @@
     "dataSource": "app-mail"
   },
   "User": {
-    "dataSource": "app-db"
+    "dataSource": "app-db",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "app-db",
@@ -29,6 +30,10 @@
     "public": false
   },
   "Post": {
+    "dataSource": "app-db",
+    "public": true
+  },
+  "Account": {
     "dataSource": "app-db",
     "public": true
   }
